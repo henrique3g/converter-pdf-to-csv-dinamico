@@ -1,0 +1,18 @@
+{
+  "name": "inventario_pdf_to_csv",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "electron src/main.js"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^7.1.10",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "electron-packager": "^14.2.0",
+    "electron-reload": "^1.5.0"
+  }
+}

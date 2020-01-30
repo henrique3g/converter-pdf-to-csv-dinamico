@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Converter PDF para CSV</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loader"></div>
+    <form class="container">
+      <h1 class="title">Inventário PDF para CSV</h1>
+      <div class="input-group">
+        <button
+          onclick="document.getElementById('file-pdf').click()"
+          type="button"
+          class="btn-find-pdf"
+        >
+          Escolher Arquivo
+        </button>
+        <div class="name-file-pdf">Nenhum arquivo selecionado</div>
+        <input type="file" name="file-pdf" id="file-pdf" />
+      </div>
+      <div class="input-group">
+        <button
+          onclick="document.getElementById('path-csv').click()"
+          type="button"
+          class="btn-find-path"
+        >
+          Escolher Pasta
+        </button>
+        <div class="name-path-csv">Nenhuma pasta selecionada</div>
+        <input type="file" name="path-csv" id="path-csv" webkitdirectory />
+      </div>
+      <div class="input-group flex-column">
+        <label for="name-csv">Nome do CSV</label>
+        <input
+          type="text"
+          name="name-csv"
+          id="name-csv"
+          placeholder="Nome do CSV"
+          required
+        />
+      </div>
+      <button id="btn-submit" class="btn-submit" type="submit">
+        Converter
+      </button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

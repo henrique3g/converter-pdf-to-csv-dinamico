@@ -1,0 +1,4 @@
+/node_modules
+*.csv
+yarn-error.log
+yarn.lock
