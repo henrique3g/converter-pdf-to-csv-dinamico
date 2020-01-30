@@ -47,9 +47,7 @@ btn_submit.onclick = async e => {
   }
   loader.style.display = 'block';
   try {
-    const convertPdf = new ConvertPdf(file_pdf);
-    await convertPdf.convert();
-    convertPdf.exportAsCsv(path_csv + name_csv);
+    ConvertPdf(file_pdf, path_csv, name_csv);
   } catch (error) {
     alert('Error: ' + error);
   }
