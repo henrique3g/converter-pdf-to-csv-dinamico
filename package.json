@@ -2,17 +2,36 @@
   "name": "inventario_pdf_to_csv",
   "version": "1.0.0",
   "scripts": {
-    "dev": "electron src/main.js"
+    "dev": "electron src/main.js",
+    "build": "electron-builder",
+    "build-linux": "electron-packager ./ PdfToCsvDinamico --platform=linux --arch=x64 --overwrite --asar=true --prune=true --out=release-builds"
   },
-  "main": "index.js",
+  "main": "src/main.js",
   "license": "MIT",
   "dependencies": {
-    "electron": "^7.1.10",
     "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^13.5.0",
-    "electron-packager": "^14.2.0",
+    "electron": "^7.1.10",
+    "electron-builder": "^22.3.2",
     "electron-reload": "^1.5.0"
+  },
+  "build": {
+    "appId": "tech.henriquesa.convertInventario",
+    "productName": "Converter PDF to CSV Dinamico",
+    "copyright": "Copyright © 2020 Henrique Sá",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "publish": null,
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": "squirrel"
+    }
   }
 }
