@@ -14,7 +14,7 @@ function createMainWindow() {
     resizable: false,
   });
 
-  win.loadFile('./index.html');
+  win.loadFile(path.resolve(__dirname, 'index.html'));
   win.removeMenu();
   // win.webContents.openDevTools();
 

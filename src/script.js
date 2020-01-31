@@ -15,6 +15,8 @@ let name_csv = '';
 
 const ConvertPdf = require('electron').remote.require('./ConvertPdf');
 
+const separator = process.platform === 'win32'?'\\':'/';
+
 input_file_pdf.onchange = e => {
   file_pdf = input_file_pdf.files[0].path;
 
@@ -57,18 +59,18 @@ btn_submit.onclick = async e => {
 
 function getPath(fullPath) {
   const path = fullPath;
-  const path_splited = path.split('/');
+  const path_splited = path.split(separator);
   path_splited.pop();
-  let path_csv = path_splited.join('/');
-  path_csv += '/';
+  let path_csv = path_splited.join(separator);
+  path_csv += separator;
   return path_csv;
 }
 
 function removePartsOfFullPath(fullPath, levels = 1) {
-  const arrayPath = fullPath.split('/');
+  const arrayPath = fullPath.split(separator);
   for (let i = 0; i < levels; i++) {
     arrayPath.shift();
   }
-  const joinPath = arrayPath.join('/');
+  const joinPath = arrayPath.join(separator);
   return joinPath;
 }

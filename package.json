@@ -1,10 +1,12 @@
 {
   "name": "inventario_pdf_to_csv",
+  "author": {
+    "name": "Henrique Sá"
+  },
   "version": "1.0.0",
   "scripts": {
     "dev": "electron src/main.js",
-    "build": "electron-builder",
-    "build-linux": "electron-packager ./ PdfToCsvDinamico --platform=linux --arch=x64 --overwrite --asar=true --prune=true --out=release-builds"
+    "build": "electron-builder"
   },
   "main": "src/main.js",
   "license": "MIT",
@@ -24,14 +26,6 @@
     "directories": {
       "buildResources": "resources"
     },
-    "publish": null,
-    "linux": {
-      "target": [
-        "AppImage"
-      ]
-    },
-    "win": {
-      "target": "squirrel"
-    }
+    "publish": null
   }
 }
